@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* 슬라이더 */
+#sliderWrap { position: relative; height: 930px; overflow: hidden; }
+#slideList { width: 100%;  }
+#slideList .slide { position: absolute; left: 0; top: 0; width: 100%; height: 930px; background: no-repeat center / cover;}
+#slideList .slider1 { background-image: url(../img/slider1.png);  }
+#slideList .slider1 dl { position: absolute; top: 215px; left: 300px; color: #fff; }
+#slideList .slider1 dt { font-weight: bold; font-size: 60px; text-shadow: 0 1px #000; margin-bottom: 20px;}
+#slideList .slider1 dd { font-size: 20px; font-weight: lighter;}
+#slideList .slider2 { background-image: url(../img/slider2.png); }
+#slideList .slider2 dl { position: absolute; top: 226px; left: 960px; }
+#slideList .slider2 dt { font-weight: bold; font-size: 60px; color: #000; }
+#slideList .slider2 dd { font-size: 20px; background: url(../img/nespresso.png) no-repeat 120px, url(../img/kakao2.png) no-repeat; }
+#slideList .slider2 dd::after { content: "\00d7"; color: #fff; font-size: 30px; margin-left: 95px;}
+#slideList .slider3 { background-image: url(../img/slider3.png);  }
+#slideList .slider3 dl { position: absolute; top: 190px; left: 330px; }
+#slideList .slider3 dt { font-weight: bold; font-size: 60px; color: #000; margin-bottom: 20px; text-transform: uppercase; }
+#slideList .slider3 dd { font-size: 20px; text-transform: uppercase; }
+#slideList .slider3 dd span { position: absolute; top: -35px; font-size: 30px;}
+#slideList .active { z-index: 9; }
+#btnwrap { display: flex; position: absolute; top: 723px; left: 435px; z-index: 99; }
+#btnwrap a { display: block; text-indent: -9999px; width: 15px; height: 15px; border-radius: 15px; background-color: #000; opacity: 0.5; margin-left: 15px; }
+#btnwrap .on { background: #000; opacity: 1; }
+
+/* taste */
+#taste { width: 1080px; text-align: center; margin: 0 auto; }
+#taste h3 { font-size: 65px; font-weight: bold; color:#422e27; line-height: 500px; }
+#box { display: flex; border: 1px solid #000;  }
+#taste_vertuo { width: 540px; height: 540px; border-right: 1px solid; }
+#taste_original { width: 540px; height: 540px; }
+#box h4 { font-size: 80px; text-transform: uppercase; color:#8c8c8c; padding-top: 200px; }
+#box p { font-size: 22px; font-weight: lighter; color: #000;}
+
+/* 라인애니메이션 */
+#box > div {  position: relative;}
+#box > div > svg { position: absolute; top: 0; left: 0; }
+#box > div > svg circle { fill: none; stroke-width: 1; stroke: #000;
+                          stroke-dasharray: 1696; stroke-dashoffset: 848;  transition: 0.5s;  }
+
+#taste_vertuo svg { transform: rotate(180deg) }
+#box > div:hover > svg circle { stroke-dashOffset: 1696;}
+
+/* product */
+#product { width: 1240px; height: 560px; margin: 450px auto; position: relative; }
+#productWrap { width: 100%; display: flex; justify-content: center; }
+article { margin: 0 20px; }
+article h3 a { font-size: 30px; text-transform: uppercase; font-weight: normal; font-size: 45px; color: #8c8c8c; }
+article h3 a.click { color:#422e27; font-weight: 500; }
+article h3 a::before { display:block; content: ''; border-top: solid 3px #422e27; transform: scaleX(0); transition: 400ms; }
+article h3 a:hover::before { transform: scaleX(1);  }
+
+article ul { position: absolute; bottom: 0; left: 0; width: 1240px; height: 360px; display: flex; overflow: hidden;  }
+article figcaption { padding-top: 20px; }
+article ul li { text-align: center; }
+#vertuo h3 { border-right: 2px solid #8c8c8c; padding-right: 43px; }
+#vertuo_slider li { margin: 0 50px; }
+#original_slider li { margin: 0 90px 0 60px; }
+#product_btnwrap a { position: absolute; top: 300px; }
+.prev { left: -100px; }
+.next { right: -100px; }
+.more { width: 150px; line-height: 45px; border-radius: 25px; border: 1px solid #000; font-size: 20px; text-align: center; text-transform: uppercase; position: absolute; bottom: -200px; }
+
+/* recycle */
+#recycle_capsule { width: 100%; height: 700px; text-align: center; background: url(../img/recycle.png) no-repeat center 250px; position: relative; z-index: 9; }
+#recycle_capsule dt { line-height: 80px; }
+#recycle_capsule h4 a { font-size: 60px; color:#422e27; }
+.st0 { stroke-miterlimit:10;  stroke-dasharray: 2590; stroke-dashoffset: 2590; animation: dash 5s linear alternate infinite;}
+  
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 2590;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+#capsule { position: absolute; top: 350px; left: 250px; text-align: right; font-size: 20px;   }
+#coffee { position: absolute; top: 350px; right: 350px; text-align: left; font-size: 20px; }
+
+/* recycle 슬라이더 */
+#recycle_sliderWrap { width: 1050px; margin: 400px auto; position: relative; overflow: hidden; }
+#recycle_slider { display: flex; }
+#recycle_slider dt { font-size: 50px; color: #422e27; font-weight: bold; margin: 80px 0 40px 650px; }
+#recycle_slider dd { width: 400px; height: 400px; font-size: 15px; margin-left: 650px; line-height: 30px; }
+#Argentia {  background: url(../img/slide1.png) no-repeat;  }
+#Switzerland { background: url(../img/slide2.png) no-repeat; }
+#Spain { background: url(../img/slide3.png) no-repeat;  }
+#Singapore { background: url(../img/slide4.png) no-repeat; }
+#Italy { background: url(../img/slide5.png) no-repeat; }
+
+#btnwrap3 { display: flex; position: absolute; top: 470px; left: 650px; }
+#btnwrap3 p { font-size: 30px; font-weight: bold; margin: 0 50px; color: #8c8c8c; }
+#btnwrap3 p span { color: #000; }
+.recycle_prev { text-indent: -9999px; }
+.recycle_prev::after { content: ""; width: 20px; height: 20px; border-top: 3px solid #8c8c8c; border-right: 3px solid #8c8c8c; transform: rotate(225deg); position: absolute; top: 12px; left: 0px;}
+.recycle_next { text-indent: -9999px; }
+.recycle_next::after { content: ""; width: 20px; height: 20px; border-top: 3px solid #8c8c8c; border-right: 3px solid #8c8c8c; transform: rotate(45deg); position: absolute; top: 12px; right: 0px;}
+.read_more { width: 150px; height: 30px; position: absolute; top: 400px; left: 650px; font-size: 15px; background: url(../img/more.png) no-repeat 85px 7px; }
+.read_more::after { content: ""; width: 25px; height: 25px; border-radius: 25px; background: #e3e6e9; position: absolute; left: 95px; z-index: -1;}

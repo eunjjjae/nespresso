@@ -6,7 +6,7 @@ a { text-decoration: none; color: #000;}
 address { font-style: normal; }
 .hidden { position: absolute; left: -9999px;}
 
-body { width: 100%; font-family: 'Noto Sans KR', sans-serif; overflow-x: hidden; }
+body { position: relative; width: 100%; max-width: 1920px; margin: 0 auto; font-family: 'Noto Sans KR', sans-serif; overflow-x: hidden; }
 /* 헤더 */
 #header { width: 100%; display: flex; justify-content: center; align-items: center; position: relative; z-index: 999; }
 #header h1 { position: absolute; top: 32px; left: 30px; }

@@ -80,7 +80,8 @@ $("#btnwrap a").on('click', function(e) {
 
 
 $('#taste_vertuo').on('mouseenter', function(){
-  $(this).css({ backgroundImage : 'url(img/vertuo_hover.png)', backgroundRepeat: 'no-repeat', backgroundPosition: '50% 30%' }, 500)
+
+  // $(this).css({ backgroundImage : 'url(img/vertuo_hover.png)', backgroundRepeat: 'no-repeat', backgroundPosition: '50% 30%' }, 500)
   $(this).children('h4').stop().animate({ marginTop: 100 }, 600).css({ color: '#422e27' })
 }).on('mouseleave', function(){
   $(this).css({ backgroundImage: 'url("")' })
@@ -88,7 +89,7 @@ $('#taste_vertuo').on('mouseenter', function(){
 })
 
 $('#taste_original').on('mouseenter', function(){
-  $(this).css({ backgroundImage : 'url(img/original_hover.png)', backgroundRepeat: 'no-repeat', backgroundPosition: '50% 15%' })
+  // $(this).css({ backgroundImage : 'url(img/original_hover.png)', backgroundRepeat: 'no-repeat', backgroundPosition: '50% 15%' })
   $(this).children('h4').stop().animate({ marginTop: 90 }, 600).css({ color: '#422e27' })
 }).on('mouseleave', function(){
   $(this).css({ backgroundImage: 'url("")' })
@@ -147,8 +148,3 @@ $('.recycle_prev').on('click', function(e){
   $('#btnwrap3 p span').text(`0${n-1}`);
 
 })
-
-
-
-
-

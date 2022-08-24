@@ -1,0 +1,122 @@
+@charset "utf-8";
+/* 슬라이더 */
+#sliderWrap { position: relative; height: 930px; overflow: hidden; }
+#slideList { width: 100%;  }
+#slideList .slide { position: absolute; left: 0; top: 0; width: 100%; height: 930px; max-height: 930px; background: no-repeat center / cover;}
+#slideList .slider1 { background-image: url(../img/slider1.png);  }
+#slideList .slider1 dl { position: absolute; top: 215px; left: 300px; color: #fff; }
+#slideList .slider1 dt { font-weight: bold; font-size: 60px; text-shadow: 0 1px #000; margin-bottom: 20px;}
+#slideList .slider1 dd { font-size: 20px; font-weight: lighter;}
+#slideList .slider2 { background-image: url(../img/slider2.png); }
+#slideList .slider2 dl { position: absolute; top: 226px; left: 960px; }
+#slideList .slider2 dt { font-weight: bold; font-size: 60px; color: #000; }
+#slideList .slider2 dd { font-size: 20px; background: url(../img/nespresso.png) no-repeat 120px, url(../img/kakao2.png) no-repeat; }
+#slideList .slider2 dd::after { content: "\00d7"; color: #fff; font-size: 30px; margin-left: 95px;}
+#slideList .slider3 { background-image: url(../img/slider3.png);  }
+#slideList .slider3 dl { position: absolute; top: 190px; left: 330px; }
+#slideList .slider3 dt { font-weight: bold; font-size: 60px; color: #000; margin-bottom: 20px; text-transform: uppercase; }
+#slideList .slider3 dd { font-size: 20px; text-transform: uppercase; }
+#slideList .slider3 dd span { position: absolute; top: -35px; font-size: 30px;}
+#slideList .active { z-index: 9; }
+#btnwrap { display: flex; position: absolute; top: 723px; left: 435px; z-index: 99; }
+#btnwrap a { display: block; text-indent: -9999px; width: 15px; height: 15px; border-radius: 15px; background-color: #000; opacity: 0.5; margin-left: 15px; }
+#btnwrap .on { background: #000; opacity: 1; }
+
+/* taste */
+#taste { width: 1080px; text-align: center; margin: 0 auto; }
+#taste h3 { font-size: 65px; font-weight: bold; color:#422e27; line-height: 500px; }
+#box { display: flex; border: 1px solid #000;  }
+#box > div {  position: relative; }
+#box > div::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                      background: no-repeat center; opacity: 0; transition: 1s; }
+#box > #taste_vertuo::after { background-image: url(../img/vertuo_hover.png); }
+#box > #taste_original::after { background-image: url(../img/original_hover.png); }
+
+#box > div:hover::after { top: -70px; opacity: 1; }
+
+#taste_vertuo { width: 540px; height: 540px; border-right: 1px solid; }
+#taste_original { width: 540px; height: 540px; }
+#box h4 { font-size: 80px; text-transform: uppercase; color:#8c8c8c; padding-top: 200px; }
+#box p { font-size: 22px; font-weight: lighter; color: #000;}
+
+/* 라인애니메이션 */
+#box > div > svg { position: absolute; top: 0; left: 0; }
+#box > div > svg circle { fill: none; stroke-width: 1; stroke: #000;
+                          stroke-dasharray: 1696; stroke-dashoffset: 848;  transition: 1s;  }
+
+#taste_vertuo svg { transform: rotate(180deg) }
+#box > div:hover > svg circle { stroke-dashOffset: 1696;}
+
+/* product */
+#product { width: 1240px; height: 560px; margin: 450px auto; position: relative; }
+#productWrap { width: 100%; display: flex; justify-content: center; }
+article { margin: 0 20px; }
+article h3 a { font-size: 30px; text-transform: uppercase; font-weight: normal; font-size: 45px; color: #8c8c8c; }
+article h3 a.click { color:#422e27; }
+article h3 a::before { display:block; content: ''; border-top: solid 3px #422e27; transform: scaleX(0); transition: 400ms; }
+article h3 a:hover::before { transform: scaleX(1);  }
+
+article ul { position: absolute; bottom: 0; left: 0; width: 1240px; height: 360px; display: flex; overflow: hidden;  }
+article figcaption { padding-top: 20px; }
+article ul li { text-align: center; }
+#vertuo h3 { border-right: 2px solid #8c8c8c; padding-right: 43px; }
+#vertuo_slider li { margin: 0 50px; }
+#original_slider li { margin: 0 90px 0 60px; }
+#product_btnwrap a { position: absolute; top: 300px; }
+.prev { left: -100px; }
+.next { right: -100px; }
+#button { width: 150px; line-height: 45px; font-size: 18px; text-align: center; border: 1px solid #000; border-radius: 25px; overflow: hidden; transform: translate3d(0, 0, 0); background: #fff; position: absolute; bottom: -200px; text-transform: uppercase; }
+.wave { position: absolute; bottom: 3%; left: 50%; background: #422e27; width: 300px; height: 300px; margin-left: -150px; margin-bottom: -302px;
+        transform-origin: 50% 48%; border-radius: 43%; transition-duration: 0.75s; transition-timing-function: ease; }
+#button:hover { color: #fff; }
+#button:hover .wave { margin-bottom: -250px; animation: rotate 3000ms infinite linear; z-index: -1; }
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    from { transform: rotate(360deg); } }
+
+  /* recycle */
+#recycle { position: relative; text-align: center; }
+#recycle_capsule { width: 1200px; height: 700px; margin: 0 auto;  }
+#imgWrap1 { width: 450px; height: 440px; display: flex; flex-direction: column; margin: 170px auto; }
+.img_coffee { position: absolute; top: 257px; left: 727px; clip: rect( 0, 450px, 450px, 225px); transition: 1.5s; }
+#svg { position: absolute; top: 80px; left: 0; z-index: -1; }
+#svg svg { width: 1920px; height: 700px; stroke-dasharray: 2103; stroke-dashoffset: 0; animation: dash 3s linear alternate; }
+#svg path { fill: none; stroke-width: 1; stroke: #000; }
+@keyframes dash {
+        0% { stroke-dashoffset: 2103; }
+        100% { stroke-dashoffset: 0; }
+      }
+#recycle_capsule dt { line-height: 80px; }
+#recycle_capsule h4 a { font-size: 60px; color:#422e27; }
+#capsule { position: absolute; top: 250px; left: 250px; text-align: right; font-size: 20px; display: none; }
+#coffee { position: absolute; top: 450px; right: 350px; text-align: left; font-size: 20px; display: none; }
+
+
+/* recycle 슬라이더 */
+#recycle_sliderWrap { width: 1200px; height: 700px; margin: 500px auto; position: relative; }
+
+#recycle_slider { position: relative;  }
+#recycle_slider dl { width: 100%; height: 700px; position: absolute; top: 0; left: 0; }
+#recycle_slider img { position: absolute; top: 0; left: 0; }
+
+#recycle_slider dt { font-size: 50px; color: #422e27; font-weight: bold;  position: absolute; top: 100px; left: 720px; }
+#recycle_slider dd span { font-size: 15px; line-height: 30px; position: absolute; top: 230px; left: 720px; text-align: left;  } 
+
+#btnwrap3 { display: flex; position: absolute; top: 550px; left: 730px; }
+#btnwrap3 p { font-size: 30px; font-weight: bold; margin: 0 50px; color: #8c8c8c; }
+#btnwrap3 p span { color: #000; }
+.recycle_prev { text-indent: -9999px; }
+.recycle_prev::after { content: ""; width: 20px; height: 20px; border-top: 3px solid #8c8c8c; border-right: 3px solid #8c8c8c; transform: rotate(225deg); position: absolute; top: 12px; left: 0px;}
+.recycle_next { text-indent: -9999px; }
+.recycle_next::after { content: ""; width: 20px; height: 20px; border-top: 3px solid #8c8c8c; border-right: 3px solid #8c8c8c; transform: rotate(45deg); position: absolute; top: 12px; right: 0px;}
+.read_more { width: 150px; height: 30px; position: absolute; top: 480px; left: 680px; font-size: 15px; background: url(../img/more.png) no-repeat 115px 7px; }
+.read_more::after { content: ""; width: 25px; height: 25px; border-radius: 25px; background: #e3e6e9; position: absolute; left: 120px; z-index: -1;}
+
+#svg2 { position: absolute; top: 60px; left: 40px; z-index: -1; }
+#svg2 svg { width: 540px; height: 540px; stroke-dasharray: 1920; stroke-dashoffset: 0; animation: dash 3s linear; 
+}
+#svg2 path { fill: none; stroke-width: 1; stroke: #000; }
+@keyframes dash {
+        0% { stroke-dashoffset: 1920; }
+        100% { stroke-dashoffset: 0; }
+      }

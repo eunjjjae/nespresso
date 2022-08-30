@@ -141,10 +141,10 @@ article dl:hover::after { content: "장바구니"; color: #fff; position: absolu
     .system div { width: 500px; }
 
     #imgWrap .coffee1 { top: 100px; left: 0; }
-    #imgWrap .coffee2 { top: 50px; left: 170px; }
+    #imgWrap .coffee2 { top: 50px; left: 179px; }
     #imgWrap .coffee3 { right: 0; } 
 
-    #coffee svg { width: 500px; top: 352px; right: -170px; }
+    #coffee svg { width: 500px; top: 362px; right: -156px; }
     #coffee_capsule { width: 90%; }
 
 }
